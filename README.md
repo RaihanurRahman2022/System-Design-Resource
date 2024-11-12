@@ -6,7 +6,9 @@ Collect System Design Resources
 - **Getting Started**
   - [What is system design?](#what-is-system-design)
  
-
+- **Basic**
+  - [IP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#ip)
+  -  
 
 
 
