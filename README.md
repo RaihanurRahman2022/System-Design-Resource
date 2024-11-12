@@ -12,7 +12,7 @@ Collect System Design Resources
       - [Private IP Address](#private-ip-address)
       - [Dynamic IP Address](#dynamic-ip-address)
       - [Static IP Address](#static-ip-address)
-
+  - [OSI Model](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#osi-model)
 
 
 
