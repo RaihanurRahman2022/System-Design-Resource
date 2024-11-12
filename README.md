@@ -31,7 +31,7 @@ System design is the process of defining the elements of a system, as well as th
   communicate with your network.Public IP addresses are assigned by your Internet Service Provider (ISP). They are unique across the entire internet.
   
   Example:
-  - A website like www.example.com has a public IP address like 93.184.216.34, which is accessible to anyone across the world.
+  - A website like www.example.com has a public IP address like `93.184.216.34`, which is accessible to anyone across the world.
   
   Characteristics:
   - Public IPs are visible on the internet and can be reached from anywhere (unless blocked by firewalls or other security measures).
@@ -41,22 +41,23 @@ System design is the process of defining the elements of a system, as well as th
   A Private IP Address is used inside private networks (like home, office, or school networks). These addresses are not accessible from the internet and are reserved for use within local networks. 
   
   Private IP Address Ranges:
-  - Class A: 10.0.0.0 to 10.255.255.255
-  - Class B: 172.16.0.0 to 172.31.255.255
-  - Class C: 192.168.0.0 to 192.168.255.255
+  - Class A: `10.0.0.0` to `10.255.255.255`
+  - Class B: `172.16.0.0` to `172.31.255.255`
+  - Class C: `192.168.0.0` to `192.168.255.255`
     
   Example:
-  - 192.168.1.1: Commonly used as the default IP address for home routers.
-  - 10.0.0.1: Often used by larger networks (e.g., office networks).
+  - `192.168.1.1`: Commonly used as the default IP address for home routers.
+  - `10.0.0.1`: Often used by larger networks (e.g., office networks).
     
   Characteristics:
   - Private IP addresses cannot be routed on the public internet.
   - Routers use Network Address Translation (NAT) to map private IP addresses to a public IP address when accessing the internet.
 # Dynamic IP Address
-  A Dynamic IP Address is an IP address that is assigned to a device for a limited time by a Dynamic Host Configuration Protocol (DHCP) server, such as your router or ISP. These IP addresses can change over time.
+  A Dynamic IP Address is an IP address that is assigned to a device for a limited time by a [Dynamic Host Configuration Protocol (DHCP)](https://www.geeksforgeeks.org/dynamic-host-configuration-protocol-dhcp/) 
+  server, such as your router or ISP. These IP addresses can change over time.
 
   Example:
-  - Your laptop or smartphone might get a dynamic IP like 192.168.1.100 when it connects to your home Wi-Fi, but the next time it connects, it may get 192.168.1.102.
+  - Your laptop or smartphone might get a dynamic IP like `192.168.1.100` when it connects to your home Wi-Fi, but the next time it connects, it may get `192.168.1.102`.
   
   Characteristics:
   - Dynamic IPs are temporary and can change each time the device connects to the network.
@@ -67,7 +68,7 @@ System design is the process of defining the elements of a system, as well as th
   email servers).
 
   Example:
-  - If you're hosting a website, your server might have a static IP like 203.0.113.5, which remains the same every time someone accesses it.
+  - If you're hosting a website, your server might have a static IP like `203.0.113.5`, which remains the same every time someone accesses it.
     
   Characteristics:
   - Static IPs are fixed and remain the same over time, making them suitable for services that require constant access.
