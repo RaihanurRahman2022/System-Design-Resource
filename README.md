@@ -13,6 +13,7 @@ Collect System Design Resources
       - [Dynamic IP Address](#dynamic-ip-address)
       - [Static IP Address](#static-ip-address)
   - [OSI Model](#osi-model)
+  - [TCP and UDP](#tcp-and-udp)
 
 
 
@@ -87,3 +88,82 @@ System design is the process of defining the elements of a system, as well as th
 ### Resources On OSI Model
   - [OSI MODEL: কেন এবং কীভাবে?](https://www.linkedin.com/pulse/osi-model-%E0%A6%95%E0%A6%A8-%E0%A6%8F%E0%A6%AC-%E0%A6%95%E0%A6%AD%E0%A6%AC-poridhiio/)
   - [OSI MODEL](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#osi-model)
+
+# TCP and UDP
+  What is TCP?
+  - TCP (Transmission Control Protocol) is a connection-oriented protocol.
+  - It ensures reliable communication. Data is sent in the correct order, and if packets are lost, they are retransmitted.
+  
+  Example: Imagine you're sending a letter through the mail. TCP ensures that your letter will reach its destination without being lost, and if it’s delayed or damaged, it will be resent. It also ensures that 
+  all the pages are in the right order.
+  
+  What is UDP?
+  - UDP (User Datagram Protocol) is a connectionless protocol.
+  - It's faster because it doesn't guarantee reliability or order. If some packets get lost, they aren't retransmitted.
+  
+  Example: Think of streaming a live video or playing an online game. If a few frames or packets are lost, it doesn't matter that much. You’re willing to accept some data loss for the sake of speed.
+### Resources on TCP & UDP
+  - [TCP & UDP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#tcp-and-udp)
+### How does whole communication work
+ ```
+  +-------------------------+          +----------------------+
+  |  Web Browser (Client)    |         |   Web Server (Server)|
+  |------------------------- |         |----------------------|
+  | 1. Enter URL             |         |                      |
+  |    (www.example.com)     |         |                      |
+  | 2. Resolve DNS (to IP)   |         |                      |
+  |    (e.g., 192.0.2.1)     |         |                      |
+  | 3. Send HTTP Request     |         |                      |
+  |    (GET /index.html HTTP)|         |                      |
+  +-------------------------+          +----------------------+
+                 |                                |
+                 | Step 1: DNS Resolution         |
+                 v                                |
+     +------------------------+                   |
+     |       DNS Server        |                  |
+     | Resolves domain name to |                  |
+     | IP address (e.g., 192.0.2.1)               |
+     +------------------------+                   |
+                 |                                |
+     Step 2: TCP Connection Establishment         |
+                 |                                |
+                 v                                v
+  +-------------------------+          +----------------------+
+  |        Client (TCP)      |         |       Web Server     |
+  |------------------------- |         |----------------------|
+  | 4. Client opens a TCP    |         | 5. Server listens on |
+  |    connection to server  |         |    TCP port 80       |
+  |    (SYN, SYN-ACK, ACK)   |         |                      |
+  |    to port 80 (HTTP)     |         |                      |
+  +-------------------------+          +----------------------+
+                 |                                |
+                 | Step 3: Send HTTP Request      |
+                 v                                v
+  +-------------------------+          +----------------------+
+  |        Client (TCP)     |          |     Web Server       |
+  |-------------------------|          |----------------------|
+  | 6. Client sends HTTP    |          | 7. Server receives   |
+  |    Request over TCP     |          |    the HTTP request  |
+  |    (GET /index.html)    |          |    over TCP          |
+  +-------------------------+          +----------------------+
+                 |                                |
+                 | Step 4: Server Response      |
+                 v                                v
+  +-------------------------+          +----------------------+
+  |        Client (TCP)     |          |     Web Server       |
+  |-------------------------|          |----------------------|
+  | 8. Client receives HTTP |          | 9. Server processes  |
+  |    Response (HTML page) |          |    the HTTP request  |
+  |    over TCP             |          |    and sends back a  |
+  |                         |          |    response (200 OK) |
+  +-------------------------+          +----------------------+
+                 |                                |
+                 | Step 5: Data Transfer         |
+                 v                                v
+  +-------------------------+          +----------------------+
+  |        Client (TCP)     |          |     Web Server       |
+  |-------------------------|          |----------------------|
+  | 10. Client closes TCP   |          | 11. Server closes TCP|
+  |     connection (FIN, ACK)|         |     connection (FIN) |
+  +-------------------------+          +----------------------+
+```
