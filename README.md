@@ -102,8 +102,6 @@ System design is the process of defining the elements of a system, as well as th
   - It's faster because it doesn't guarantee reliability or order. If some packets get lost, they aren't retransmitted.
   
   Example: Think of streaming a live video or playing an online game. If a few frames or packets are lost, it doesn't matter that much. You’re willing to accept some data loss for the sake of speed.
-### Resources on TCP & UDP
-  - [TCP & UDP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#tcp-and-udp)
 ### How does whole communication work
  ```
   +-------------------------+          +----------------------+
@@ -167,3 +165,5 @@ System design is the process of defining the elements of a system, as well as th
   |     connection (FIN, ACK)|         |     connection (FIN) |
   +-------------------------+          +----------------------+
 ```
+### Resources on TCP & UDP
+  - [TCP & UDP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#tcp-and-udp)
