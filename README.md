@@ -12,7 +12,7 @@ Collect System Design Resources
       - [Private IP Address](#private-ip-address)
       - [Dynamic IP Address](#dynamic-ip-address)
       - [Static IP Address](#static-ip-address)
-  - [OSI Model](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#osi-model)
+  - [OSI Model](#osi-model)
 
 
 
@@ -52,6 +52,7 @@ System design is the process of defining the elements of a system, as well as th
   Characteristics:
   - Private IP addresses cannot be routed on the public internet.
   - Routers use Network Address Translation (NAT) to map private IP addresses to a public IP address when accessing the internet.
+    
 # Dynamic IP Address
   A Dynamic IP Address is an IP address that is assigned to a device for a limited time by a [Dynamic Host Configuration Protocol (DHCP)](https://www.geeksforgeeks.org/dynamic-host-configuration-protocol-dhcp/) 
   server, such as your router or ISP. These IP addresses can change over time.
@@ -73,3 +74,16 @@ System design is the process of defining the elements of a system, as well as th
   Characteristics:
   - Static IPs are fixed and remain the same over time, making them suitable for services that require constant access.
   - They are more expensive and typically require manual configuration.
+    
+# OSI Model
+  The Open System Interconnection (OSI) model has defined the common terminology used in networking discussions and documentation. This allows us to take a very complex communications process apart and evaluate     its components.
+
+  While this model is not directly implemented in the TCP/IP networks that are most common today, it can still help us do so much more, such as:
+  
+  - Make troubleshooting easier and help identify threats across the entire stack.
+  - Encourage hardware manufacturers to create networking products that can communicate with each other over the network.
+  - Essential for developing a security-first mindset.
+  - Separate a complex function into simpler components.
+### Resources On OSI Model
+  - [OSI MODEL: কেন এবং কীভাবে?](https://www.linkedin.com/pulse/osi-model-%E0%A6%95%E0%A6%A8-%E0%A6%8F%E0%A6%AC-%E0%A6%95%E0%A6%AD%E0%A6%AC-poridhiio/)
+  - [OSI MODEL](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#osi-model)
