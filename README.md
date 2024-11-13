@@ -183,7 +183,10 @@ System design is the process of defining the elements of a system, as well as th
   - HTTPS encrypts data using SSL/TLS (Secure Sockets Layer / Transport Layer Security), which ensures privacy and integrity by encrypting the data between the client and server.
   - It provides protection against man-in-the-middle attacks and ensures data integrity (i.e., the data sent has not been tampered with).
 
-### HTTPS Connection Process (SSL/TLS Handshake):
+### HTTPS Connection Process (SSL/TLS Handshake)
+
+![Ref-Image](https://media2.dev.to/cdn-cgi/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fsl3p050n2cvojxzewqvr.jpg)
+    
   - TLS Handshake: Before any data can be transferred securely over HTTPS, the client and server first perform a handshake to establish the encryption methods.
 
     Steps in the SSL/TLS Handshake:
