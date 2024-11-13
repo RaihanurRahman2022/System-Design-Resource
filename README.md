@@ -14,6 +14,7 @@ Collect System Design Resources
       - [Static IP Address](#static-ip-address)
   - [OSI Model](#osi-model)
   - [TCP and UDP](#tcp-and-udp)
+  - [HTTP and HTTPS](#http-and-https)
 
 
 
@@ -167,3 +168,40 @@ System design is the process of defining the elements of a system, as well as th
 ```
 ### Resources on TCP & UDP
   - [TCP & UDP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#tcp-and-udp)
+
+# HTTP and HTTPS
+  HTTP (HyperText Transfer Protocol) is the foundation of data communication on the World Wide Web. It's a protocol used by browsers (clients) to communicate with web servers. HTTPS (HyperText Transfer Protocol 
+  Secure) is simply the secure version of HTTP, which means that the communication between the client and server is encrypted using SSL/TLS.
+  
+### HTTP (HyperText Transfer Protocol)
+  - HTTP is an application-layer protocol in the OSI model.
+  - It is a stateless protocol, meaning each request from a client to a server is treated as independent, with no memory of previous requests.
+  - HTTP relies on TCP (Transmission Control Protocol) for data transfer, which ensures reliable communication.
+    
+### HTTPS (HyperText Transfer Protocol Secure)
+  - HTTPS is essentially HTTP with an added layer of security.
+  - HTTPS encrypts data using SSL/TLS (Secure Sockets Layer / Transport Layer Security), which ensures privacy and integrity by encrypting the data between the client and server.
+  - It provides protection against man-in-the-middle attacks and ensures data integrity (i.e., the data sent has not been tampered with).
+
+### HTTPS Connection Process (SSL/TLS Handshake):
+  - TLS Handshake: Before any data can be transferred securely over HTTPS, the client and server first perform a handshake to establish the encryption methods.
+
+    Steps in the SSL/TLS Handshake:
+    - Client Hello: The client sends a message to the server, initiating the handshake, listing the supported encryption algorithms, and other details.
+    - Server Hello: The server responds with its own encryption method and sends its SSL certificate, which includes the server's public key.
+    - Certificate Verification: The client verifies the server's certificate using trusted Certificate Authorities (CAs).
+    - Session Key Generation: Both client and server generate a session key using a Diffie-Hellman key exchange or other methods.
+    - Client Finished: The client sends a message encrypted with the session key to confirm that the handshake is complete.
+    - Server Finished: The server responds with its own encrypted message, indicating the completion of the handshake.
+      
+  - Secure Data Transfer: After the handshake, the client and server can now securely send and receive data, all encrypted with the session key.
+  
+  - Session Termination: Once the session is finished, the connection is closed.
+
+
+
+
+
+
+
+
