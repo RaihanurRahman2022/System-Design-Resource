@@ -17,6 +17,11 @@ Collect System Design Resources
   - [HTTP and HTTPS](#http-and-https)
   - [Scalability](#scalability)
   - [Performance vs scalability](#performance-vs-scalability)
+  - [Latency vs throughput](#latency-vs-throughput)
+  - [Availability vs consistency](#availability-vs-consistency)
+      - [CAP Theorem](#cap-theorem)
+          - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+          - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)  
 
 
 
@@ -223,7 +228,70 @@ System design is the process of defining the elements of a system, as well as th
   - If you have a performance problem, your system is slow for a single user.
   - If you have a scalability problem, your system is fast for a single user but slow under heavy load.
 
+### Resources on Performance vs Scalability
+  - [Performance vs Scalability](https://blog.professorbeekums.com/performance-vs-scalability/)
+  - [Scalability, Availability & Stability Patterns](https://www.slideshare.net/slideshow/scalability-availability-stability-patterns/4062682)
 
+# Latency vs throughput
+  Latency and throughput are two important measures of a system’s performance. Latency refers to the amount of time it takes for a system to respond to a request. Throughput refers to the number of requests that   a system can handle at the same time.
 
+  - Generally, you should aim for maximal throughput with acceptable latency.
 
+### Resources on Latency vs throughput
+  - [System Design: Latency vs Throughput](https://cs.fyi/guide/latency-vs-throughput)
+  - [Understanding Latency versus Throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
 
+# Availability vs consistency
+  Availability refers to the ability of a system to provide its services to clients even in the presence of failures. This is often measured in terms of the percentage of time that the system is up and running,    also known as its uptime.
+
+  Consistency, on the other hand, refers to the property that all clients see the same data at the same time. This is important for maintaining the integrity of the data stored in the system.
+
+  In distributed systems, it is often a trade-off between availability and consistency. Systems that prioritize high availability may sacrifice consistency, while systems that prioritize consistency may 
+  sacrifice availability. Different distributed systems use different approaches to balance the trade-off between availability and consistency, such as using replication or consensus algorithms.
+
+## CAP Theorem
+  The CAP Theorem, also known as Brewer's Theorem, is a concept from distributed systems that describes the trade-offs between three key properties in a distributed database or system. 
+
+  According to CAP theorem, in a distributed system, you can only support two of the following guarantees:
+
+  - Consistency - Every read receives the most recent write or an error
+  - Availability - Every request receives a response, without guarantee that it contains the most recent version of the information
+  - Partition Tolerance - The system continues to operate despite arbitrary partitioning due to network failures
+  
+  Networks aren’t reliable, so you’ll need to support partition tolerance. You’ll need to make a software tradeoff between consistency and availability.
+
+### Resources on CAP Theorem
+  - [CAP theorem revisited](https://robertgreiner.com/cap-theorem-revisited/)
+  - [A plain english introduction to CAP theorem](http://ksat.me/a-plain-english-introduction-to-cap-theorem)
+  - [CAP FAQ](https://github.com/henryr/cap-faq)
+  - [The CAP theorem](https://www.youtube.com/watch?v=k-Yaq8AHlFA)
+    
+## CP - consistency and partition tolerance
+  CP (Consistency + Partition Tolerance) system is one that prioritizes consistency and partition tolerance but sacrifices availability in certain situations. Waiting for a response from the partitioned node 
+  might result in a timeout error. CP is a good choice if your business needs require atomic reads and writes.
+
+### CP System:
+  - Consistency (C): All nodes in the system have the same data at any given time, and any read operation will return the most recent write (i.e., the system ensures that the data is consistent across all nodes).
+  
+  - Partition Tolerance (P): The system can continue operating correctly even if a network partition occurs (i.e., if nodes can’t communicate with each other due to network failures or latency). Partition 
+    tolerance is essential in distributed systems because network failures and partitions are inevitable in large-scale environments.
+
+  - Availability (A) is sacrificed: If a partition occurs, the system may choose to not respond to some requests (either read or write) to maintain consistency. In other words, during network partitions, the 
+    system may not be fully available to serve all requests.
+
+## AP - availability and partition tolerance
+   AP (Availability + Partition Tolerance) system prioritizes availability and partition tolerance, but sacrifices consistency in certain situations. Responses return the most readily available version of the 
+   data available on any node, which might not be the latest. Writes might take some time to propagate when the partition is resolved.
+
+   AP is a good choice if the business needs to allow for [eventual consistency](#eventual-consistency) or when the system needs to continue working despite external errors.
+
+### AP System:
+  - Availability (A): The system will always respond to requests, either with the requested data or an acknowledgment of the write operation. In an AP system, no request is left hanging, and the system is 
+    designed to provide a response to all read and write requests, even if some of the data may be inconsistent across nodes.
+  
+  - Partition Tolerance (P): The system can continue to operate correctly even if a network partition occurs (i.e., if some nodes are unable to communicate with others due to network issues). The system can     
+    handle network failures or delays without going down, maintaining functionality across all parts of the system.
+  
+  - Consistency (C) is sacrificed: In the event of a partition, different nodes might have inconsistent or outdated data. The system will respond to requests, but it may not guarantee that the data returned is 
+    the most up-to-date version. This trade-off means that, during partitions, the system could return stale or conflicting data.
+    
