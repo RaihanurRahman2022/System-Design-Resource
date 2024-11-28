@@ -8,20 +8,23 @@ Collect System Design Resources
  
 - **Basic**
   - [IP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#ip)
-      - [Public IP Address](#public-ip-address)
-      - [Private IP Address](#private-ip-address)
-      - [Dynamic IP Address](#dynamic-ip-address)
-      - [Static IP Address](#static-ip-address)
+    - [Public IP Address](#public-ip-address)
+    - [Private IP Address](#private-ip-address)
+    - [Dynamic IP Address](#dynamic-ip-address)
+    - [Static IP Address](#static-ip-address)
   - [OSI Model](#osi-model)
   - [TCP and UDP](#tcp-and-udp)
   - [HTTP and HTTPS](#http-and-https)
   - [Scalability](#scalability)
+    - [Vertical scaling](#vertical-scaling)
+    - [Horizontal scaling](#horizontal-scaling)
+    - [Vertical scaling vs Horizontal scaling](#vertical-scaling-vs-horizontal-scaling)
   - [Performance vs scalability](#performance-vs-scalability)
   - [Latency vs throughput](#latency-vs-throughput)
   - [Availability vs consistency](#availability-vs-consistency)
-      - [CAP Theorem](#cap-theorem)
-          - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-          - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)  
+    - [CAP Theorem](#cap-theorem)
+      - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+      - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)  
 
 
 
@@ -219,6 +222,72 @@ System design is the process of defining the elements of a system, as well as th
 ### Resources on Scalability
   - [A word on scalability](https://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
   - [Scalability for Dummies](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+
+# Vertical scaling
+  Vertical scaling (also known as scaling up) refers to the process of adding more resources to a single server or machine in order to handle increased demand. This approach focuses on upgrading the 
+  hardware of an existing server rather than adding more servers to a system.
+
+  - Adding Resources: Involves increasing the capacity of a single server by adding more CPU power, RAM, storage, or network bandwidth to handle more traffic or computational load.
+  - Simpler Architecture: Unlike horizontal scaling, vertical scaling keeps the architecture relatively simple, as it only involves one machine with upgraded resources.
+  - No Need for Distributed Systems: Because you're working with a single server, vertical scaling does not require complex distributed systems or load balancing mechanisms.
+
+### Example
+  - A web application may start with a server that has 4 GB of RAM and a 2-core processor. As traffic grows, the server is upgraded to 16 GB of RAM and an 8-core processor to handle the increased number of   
+  requests.
+  - In the case of a database system, if a database server is struggling to keep up with the growing volume of queries, you can scale vertically by upgrading the hardware to provide more processing power and 
+  memory for better query handling.
+
+### Advantages
+
+- Simple to implement
+- Easier to manage
+- Data consistent
+
+### Disadvantages
+
+- Risk of high downtime
+- Harder to upgrade
+- Can be a single point of failure
+
+
+# Horizontal scaling
+  Horizontal scaling (also known as scaling out) refers to adding more individual machines or servers to a system to distribute the workload across multiple resources, rather than upgrading a single machine (as    in vertical scaling). This approach is often used to handle larger volumes of traffic or data while maintaining system reliability and performance.
+
+  - Adding More Servers: In horizontal scaling, you scale by increasing the number of computing nodes (servers, virtual machines, containers, etc.) in your infrastructure.
+  - Distributed Workload: The workload is distributed across multiple servers, which can improve performance and reduce the risk of any single server becoming overwhelmed.
+  - Increased Redundancy: Horizontal scaling increases the fault tolerance of the system because the failure of one server does not result in a complete failure of the system.
+
+### Advantages
+
+- Increased redundancy
+- Better fault tolerance
+- Flexible and efficient
+- Easier to upgrade
+
+### Disadvantages
+
+- Increased complexity
+- Data inconsistency
+- Increased load on downstream services
+
+# Vertical scaling vs Horizontal scaling
+  Vertical scaling and horizontal scaling are two primary approaches to scaling systems in order to handle increased demand. Both strategies aim to improve the performance and capacity of a system, but they 
+  differ in how they achieve that goal.
+
+  | **Aspect**                 | **Vertical Scaling**                          | **Horizontal Scaling**                                    |
+  |--------------------------- |---------------------------------------------- |---------------------------------------------------------- |
+  | **Definition**             | Add more resources to a single server         | Add more servers to distribute the load                   |
+  | **Scalability**            | Limited (single machine)                      | Virtually unlimited (add more servers)                    |
+  | **Cost**                   | Can become expensive with high-end hardware   | Generally more cost-effective with cloud services         |
+  | **Complexity**             | Simple to implement                           | Complex to manage and maintain                            |
+  | **Fault Tolerance**        | Single point of failure                       | Higher availability and redundancy                        |
+  | **Limits**                 | Limited by hardware                           | No hard limits, as long as infrastructure can accommodate |
+  | **Performance**            | Improved performance for small to medium loads| Great for handling large-scale traffic and data           |
+  | **Example Use Cases**      | Small-to-medium-sized applications, databases | Large-scale web apps, cloud-based services, big data      |
+  
+### Resources on Vertical scaling vs Horizontal scaling
+  - [Vertical vs. horizontal scaling explained - Aerospike](https://aerospike.com/blog/vertical-vs-horizontal-scaling/#vertical_vs_horizontal_scaling)
+  - [Horizontal Vs. Vertical Scaling: Which One Should You Choose?](https://www.finout.io/blog/horizontal-vs-vertical-scaling)
 
 # Performance vs scalability
   A service is scalable if it results in increased performance in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger   units of work, such as when datasets grow.
