@@ -15,6 +15,8 @@ Collect System Design Resources
   - [OSI Model](#osi-model)
   - [TCP and UDP](#tcp-and-udp)
   - [HTTP and HTTPS](#http-and-https)
+  - [Scalability](#scalability)
+  - [Performance vs scalability](#performance-vs-scalability)
 
 
 
@@ -201,8 +203,25 @@ System design is the process of defining the elements of a system, as well as th
   
   - Session Termination: Once the session is finished, the connection is closed.
 
+# Scalability
+  
+  Scalability refers to the ability of a system, application, or process to handle an increasing amount of work, or its potential to be enlarged to accommodate that growth. In computing and 
+  software, scalability often refers to the system's ability to grow in capacity or performance when demand increases. A scalable system can efficiently manage an increase in workload or users without 
+  significantly degrading performance.
 
+  There are different techniques and strategies used to ensure that a system can efficiently handle increasing loads, users, or data volume without significant performance degradation.
 
+### Resources on Scalability
+  - [A word on scalability](https://www.allthingsdistributed.com/2006/03/a_word_on_scalability.html)
+  - [Scalability for Dummies](https://web.archive.org/web/20221030091841/http://www.lecloud.net/tagged/scalability/chrono)
+
+# Performance vs scalability
+  A service is scalable if it results in increased performance in a manner proportional to resources added. Generally, increasing performance means serving more units of work, but it can also be to handle larger   units of work, such as when datasets grow.
+
+  Another way to look at performance vs scalability:
+
+  - If you have a performance problem, your system is slow for a single user.
+  - If you have a scalability problem, your system is fast for a single user but slow under heavy load.
 
 
 
