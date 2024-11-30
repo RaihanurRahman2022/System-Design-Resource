@@ -6,7 +6,7 @@ Collect System Design Resources
 - **Getting Started**
   - [What is system design?](#what-is-system-design)
  
-- **Basic**
+- **ChapterI**
   - [IP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#ip)
     - [Public IP Address](#public-ip-address)
     - [Private IP Address](#private-ip-address)
@@ -29,7 +29,10 @@ Collect System Design Resources
     - [Strong Consistency](#strong-consistency)
     - [Weak Consistency](#weak-consistency)
     - [Eventual Consistency](#eventual-consistency)
-
+  - [Availability patterns](#availability-patterns)
+    - [Fail-Over](#fail-over)
+      - [Active-passive](#active-passive)
+      - [Active-active](#active-active)    
 
 
 
@@ -404,4 +407,34 @@ System design is the process of defining the elements of a system, as well as th
   - [Consistency Patterns in Distributed Systems](https://cs.fyi/guide/consistency-patterns-week-strong-eventual)
   - [Transactions across data centers](https://snarfed.org/s/transactions_across_datacenters_io.html)
 
+# Availability patterns
+  Availability is measured as a percentage of uptime, and defines the proportion of time that a system is functional and working. Availability is affected by system errors, infrastructure problems, malicious 
+  attacks, and system load. Cloud applications typically provide users with a service level agreement (SLA), which means that applications must be designed and implemented to maximize availability.
 
+## Fail-Over
+
+  Failover is an availability pattern that is used to ensure that a system can continue to function in the event of a failure. It involves having a backup component or system that can take over in the event of a 
+  failure.
+
+  In a failover system, there is a primary component that is responsible for handling requests, and a secondary (or backup) component that is on standby. The primary component is monitored for failures, and if     it fails, the secondary component is activated to take over its duties. This allows the system to continue functioning with minimal disruption.
+  
+  Failover can be implemented in various ways, such as active-passive, active-active, and hot-standby.
+   
+### Active-passive
+  With active-passive fail-over, heartbeats are sent between the active and the passive server on standby. If the heartbeat is interrupted, the passive server takes over the active’s IP address and resumes 
+  service.
+
+  The length of downtime is determined by whether the passive server is already running in ‘hot’ standby or whether it needs to start up from ‘cold’ standby. Only the active server handles traffic.
+
+   Active-passive failover can also be referred to as master-slave failover.
+
+### Active-active
+  In active-active, both servers are managing traffic, spreading the load between them.
+
+  If the servers are public-facing, the DNS would need to know about the public IPs of both servers. If the servers are internal-facing, application logic would need to know about both servers.
+
+  Active-active failover can also be referred to as master-master failover.
+
+### Disadvantages of Failover
+  - Fail-over adds more hardware and additional complexity.
+  - There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
