@@ -428,6 +428,16 @@ System design is the process of defining the elements of a system, as well as th
 
    Active-passive failover can also be referred to as master-slave failover.
 
+### Example Model
+
+  An active-passive architectural pattern consists of at least two nodes. The passive server (failover) acts as a backup that remains on standby and takes over in the event the active server gets disconnected 
+  for whatever reason. The primary active server hosts production, test and development applications.
+  
+  The secondary passive server essentially remains dormant during normal operation. A major disadvantage of this model is that there is no guarantee that the production application will function as expected on 
+  the passive server. The model is also considered a relatively wasteful approach because expensive hardware is left unused. 
+
+   ![Alt text](https://cdnblog.filecloud.com/blog/wp-content/uploads/2015/12/active_passive_high_availability_cluster1.png)
+
 ### Active-active
   In active-active, both servers are managing traffic, spreading the load between them.
 
@@ -435,6 +445,21 @@ System design is the process of defining the elements of a system, as well as th
 
   Active-active failover can also be referred to as master-master failover.
 
+### Example Model
+
+  The active-active model also contains at least two nodes; however, in this architectural pattern, multiple nodes are actively running the same services simultaneously. In order to fully utilize all the active 
+  nodes, an active-active cluster uses load balancing to distribute workloads across the nodes in order to prevent any single node from being overloaded. The distributed workload subsequently leads to a marked 
+  improvement in response times and throughput.
+  
+  The load balancers uses a set of complex algorithms to assign clients to the nodes, the connections are typically based on performance metrics and health checks. In order to guarantee seamless operability, all 
+  the nodes in the cluster must be configured for redundancy. A potential drawback for an active-active redundancy is that in case one of the nodes fails, client sessions might be dropped, forcing them to re- 
+  login into the system. However, this can easily be mitigated by ensuring that the individual configuration settings of each node are virtually identical.
+
+  ![Alt text](https://cdnblog.filecloud.com/blog/wp-content/uploads/2015/12/active_active_high_availability_cluster_load_balancer1.png)
+  
 ### Disadvantages of Failover
   - Fail-over adds more hardware and additional complexity.
   - There is a potential for loss of data if the active system fails before any newly written data can be replicated to the passive.
+
+### Resources on Fail Over
+  - [Fail Over Pattern - High Availability](https://www.filecloud.com/blog/2015/12/architectural-patterns-for-high-availability/)
