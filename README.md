@@ -6,7 +6,7 @@ Collect System Design Resources
 - **Getting Started**
   - [What is system design?](#what-is-system-design)
  
-- **ChapterI**
+- **Chapter I**
   - [IP](https://github.com/RaihanurRahman2022/system-design/tree/main?tab=readme-ov-file#ip)
     - [Public IP Address](#public-ip-address)
     - [Private IP Address](#private-ip-address)
