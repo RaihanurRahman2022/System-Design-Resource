@@ -32,7 +32,11 @@ Collect System Design Resources
   - [Availability patterns](#availability-patterns)
     - [Fail-Over](#fail-over)
       - [Active-passive](#active-passive)
-      - [Active-active](#active-active)    
+      - [Active-active](#active-active)
+    - [Replication](#replication)
+      - [Master-Master replication](#master-master-replication)
+      - [Master-Slave replication](#master-slave-replication)
+    - [Availability in Numbers](#availability-in-numbers)
 
 
 
@@ -463,3 +467,35 @@ System design is the process of defining the elements of a system, as well as th
 
 ### Resources on Fail Over
   - [Fail Over Pattern - High Availability](https://www.filecloud.com/blog/2015/12/architectural-patterns-for-high-availability/)
+
+# Replication
+  Replication refers to the process of copying data from one server (the primary or master) to one or more other servers (the replicas or slaves) to ensure that the data is available across multiple locations. 
+  In the context of availability patterns, replication plays a key role in improving system availability, fault tolerance, and reliability.
+
+  Replication allows a system to handle failures and continue serving requests even when certain parts of the system are down. This is particularly relevant for distributed systems and databases where high 
+  availability and disaster recovery are critical. In the event of a failure, the data can be retrieved from a different location. There are two main types of replication: 
+  
+  - Master-Master replication.
+  - Master-Slave replication.
+
+# Master-Master replication
+  In this type of replication, multiple servers are configured as “masters,” and each one can accept read and write operations. This allows for high availability and allows any of the servers to take over if one 
+  of them fails. However, this type of replication can lead to conflicts if multiple servers update the same data at the same time, so some conflict resolution mechanism is needed to handle this.
+
+
+  <p align="center">
+    <img src="images/krAHLGg.png">
+    <br/>
+    <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  </p>
+
+# Master-Slave replication
+  In this type of replication, one server is designated as the “master” and handles all write operations, while multiple “slave” servers handle read operations. If the master fails, one of the slaves can be 
+  promoted to take its place. This type of replication is simpler to set up and maintain compared to Master-Master replication.
+
+  <p align="center">
+    <img src="images/C9ioGtn.png">
+    <br/>
+    <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
+  </p>
+  
