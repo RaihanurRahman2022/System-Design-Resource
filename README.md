@@ -37,7 +37,7 @@ Collect System Design Resources
       - [Master-Master replication](#master-master-replication)
       - [Master-Slave replication](#master-slave-replication)
     - [Availability in Numbers](#availability-in-numbers)
-
+    - [Availability vs Reliability](#availability-vs-reliability)
 
 
 
@@ -546,3 +546,9 @@ System design is the process of defining the elements of a system, as well as th
   Availability (Total) = 1 - (1 - Availability (Foo)) * (1 - Availability (Bar))
   ```
   If both Foo and Bar each had 99.9% availability, their total availability in parallel would be 99.9999%.
+  
+# Availability vs Reliability
+  If a system is reliable, it is available. However, if it is available, it is not necessarily reliable. In other words, high reliability contributes to high availability, but it is possible to achieve high  
+  availability even with an unreliable system.
+
+  
