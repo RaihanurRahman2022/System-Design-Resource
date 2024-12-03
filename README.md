@@ -498,4 +498,8 @@ System design is the process of defining the elements of a system, as well as th
     <br/>
     <i><a href=http://www.slideshare.net/jboner/scalability-availability-stability-patterns/>Source: Scalability, availability, stability, patterns</a></i>
   </p>
+
+### Resources on Replication
+  - [Database Replication](https://github.com/RaihanurRahman2022/system-design/blob/main/README.md#database-replication)
+  - [Replication: Availability Pattern](https://github.com/donnemartin/system-design-primer#replication)
   
