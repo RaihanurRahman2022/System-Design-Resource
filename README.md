@@ -54,7 +54,7 @@ Collect System Design Resources
     - [DNS Zones](#dns-zones)
     - [DNS Caching](#dns-caching)
     - [Reverse DNS](#reverse-dns)
-    - [Design a Distributed DNS](#design-resource-pdf/distributed-dns.pdf)
+    - [Distributed DNS PDF](https://github.com/RaihanurRahman2022/System-Design-Resource/blob/main/design-resource-pdf/distributed-dns.pdf)
 
 
 
