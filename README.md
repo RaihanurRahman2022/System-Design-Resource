@@ -45,6 +45,15 @@ Collect System Design Resources
       - [DNS root server](#dns-root-server)
       - [TLD nameserver](#tld-nameserver)
       - [Authoritative DNS server](#authoritative-dns-server)
+    - [Query Types](#query-types)
+      - [Recursive](#recursive)
+      - [Iterative](#iterative)
+      - [Non-recursive](#non-recursive)
+    - [Record Types](#record-types)
+    - [Subdomains](#subdomains)
+    - [DNS Zones](#dns-zones)
+    - [DNS Caching](#dns-caching)
+    - [Reverse DNS](#reverse-dns)
 
 
 
