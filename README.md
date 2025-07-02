@@ -54,6 +54,7 @@ Collect System Design Resources
     - [DNS Zones](#dns-zones)
     - [DNS Caching](#dns-caching)
     - [Reverse DNS](#reverse-dns)
+    - [Design a Distributed DNS](#desing-resource-pdf/distributed-dns)
 
 
 
@@ -692,3 +693,7 @@ These are some widely used managed DNS solutions:
 - [Google Cloud DNS](https://cloud.google.com/dns)
 - [Azure DNS](https://azure.microsoft.com/en-in/services/dns)
 - [NS1](https://ns1.com/products/managed-dns)
+
+## Resource to learn more
+- [DNS-A-Distributed-System](https://notes.kodekloud.com/docs/Demystifying-DNS/DNS-as-a-System/DNS-A-Distributed-System)
+- [How DNS works](https://newsletter.systemdesign.one/p/what-is-a-dns-server-and-how-does-it-work)
