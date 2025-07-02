@@ -39,6 +39,12 @@ Collect System Design Resources
     - [Availability in Numbers](#availability-in-numbers)
     - [Availability vs Reliability](#availability-vs-reliability)
   - [Domain name system](#domain-name-system)
+    - [How DNS Works](#how-dns-work)
+    - [Server types](#server-types)
+      - [DNS Resolver](#dns-resolver)
+      - [DNS root server](#dns-root-server)
+      - [TLD nameserver](#tld-nameserver)
+      - [Authoritative DNS server](#authoritative-dns-server)
 
 
 
