@@ -54,7 +54,7 @@ Collect System Design Resources
     - [DNS Zones](#dns-zones)
     - [DNS Caching](#dns-caching)
     - [Reverse DNS](#reverse-dns)
-    - [Distributed DNS PDF](https://github.com/RaihanurRahman2022/System-Design-Resource/blob/main/design-resource-pdf/distributed-dns.pdf)
+    - [Distributed DNS](#distributed-dns)
 
 
 
@@ -697,3 +697,19 @@ These are some widely used managed DNS solutions:
 ## Resource to learn more
 - [DNS-A-Distributed-System](https://notes.kodekloud.com/docs/Demystifying-DNS/DNS-as-a-System/DNS-A-Distributed-System)
 - [How DNS works](https://newsletter.systemdesign.one/p/what-is-a-dns-server-and-how-does-it-work)
+
+## Distributed DNS
+Distributed DNS (Domain Name System) refers to the decentralized architecture of the DNS system, which is used to translate human-readable domain names (like openai.com) into IP addresses (like `104.22.1.46` ) that computers use to communicate.
+
+### Why is DNS Distributed?
+If DNS were centralized, it would become:
+
+- A single point of failure
+- Slow for global users
+- Difficult to scale with the growth of the internet
+
+So instead, it's distributed across many servers and levels of hierarchy to ensure speed, reliability, and scalability.
+
+## Detail Explaination
+- [Distributed DNS](https://medium.com/@lazygeek78/system-design-of-dns-6a7532bdf0a0)
+- [Alternet option if link is not available](https://github.com/RaihanurRahman2022/System-Design-Resource/blob/main/design-resource-pdf/distributed-dns.pdf)
