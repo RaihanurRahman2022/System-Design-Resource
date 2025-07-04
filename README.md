@@ -39,7 +39,7 @@ Collect System Design Resources
     - [Availability in Numbers](#availability-in-numbers)
     - [Availability vs Reliability](#availability-vs-reliability)
   - [Domain name system](#domain-name-system)
-    - [How DNS Works](#how-dns-work)
+    - [How DNS Works](#how-dns-works)
     - [Server types](#server-types)
       - [DNS Resolver](#dns-resolver)
       - [DNS root server](#dns-root-server)
@@ -55,12 +55,12 @@ Collect System Design Resources
     - [DNS Caching](#dns-caching)
     - [Reverse DNS](#reverse-dns)
     - [Distributed DNS](#distributed-dns)
- - [Load Balancing](#load-balancing)
-  - [Workload distribution](#workload-distribution)
-  - [Layers](#layers)
-  - [Types](#types)
-  - [Routing Algorithms](#routing-algorithms)
- - [Advantages](#advantages)   
+  - [Load Balancing](#load-balancing)
+    - [Workload distribution](#workload-distribution)
+    - [Layers](#layers)
+    - [Types](#types)
+    - [Routing Algorithms](#routing-algorithms)
+    - [Advantages](#advantages)   
 
 
 # What is system design?
