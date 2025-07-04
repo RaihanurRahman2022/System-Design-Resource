@@ -55,13 +55,12 @@ Collect System Design Resources
     - [DNS Caching](#dns-caching)
     - [Reverse DNS](#reverse-dns)
     - [Distributed DNS](#distributed-dns)
- - [Load Balancing](#load-balancing)
-   - [Workload distribution](#work-distribution)
-   - [Workload distribution](#workload-distribution)
-   - [Layers](#layers)
-   - [Types](#types)
-   - [Routing Algorithms](#routing-algorithms)
-   - [Advantages](#advantages)   
+- [Load Balancing](#load-balancing)
+ - [Workload distribution](#workload-distribution)
+ - [Layers](#layers)
+ - [Types](#types)
+ - [Routing Algorithms](#routing-algorithms)
+ - [Advantages](#advantages)   
 
 
 # What is system design?
