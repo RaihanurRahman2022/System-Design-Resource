@@ -811,7 +811,7 @@ Now, let's discuss commonly used routing algorithms:
 - **Weighted Round-robin**: Builds on the simple Round-robin technique to account for differing server characteristics such as compute and traffic handling capacity using weights that can be assigned via DNS records by the administrator.[Weighted Round-robin](https://blog.algomaster.io/i/145050914/algorithm-weighted-round-robin)
 - **Least Connections**: A new request is sent to the server with the fewest current connections to clients. The relative computing capacity of each server is factored into determining which one has the least connections.[Least Connections](https://blog.algomaster.io/i/145050914/algorithm-least-connections)
 - **Least Response Time**: Sends requests to the server selected by a formula that combines the fastest response time and fewest active connections.[Least Response Time](https://blog.algomaster.io/i/145050914/algorithm-least-response-time)
-- **Least Bandwidth**: This method measures traffic in megabits per second (Mbps), sending client requests to the server with the least Mbps of traffic.[Least Bandwidth]
+- **Least Bandwidth**: This method measures traffic in megabits per second (Mbps), sending client requests to the server with the least Mbps of traffic.[Least Bandwidth](https://docs.netscaler.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-customizing-algorithms/leastbandwidth-method.html)
 - **Hashing**: Distributes requests based on a key we define, such as the client IP address or the request URL.[Hashing](https://blog.algomaster.io/i/145050914/algorithm-ip-hash)
 
 ## Advantages
@@ -819,9 +819,13 @@ Now, let's discuss commonly used routing algorithms:
 Load balancing also plays a key role in preventing downtime, other advantages of load balancing include the following:
 
 - Scalability
+  - As a system experiences increased demand, load balancing becomes instrumental in achieving scalability. By distributing the workload evenly among servers, it allows the infrastructure to scale horizontally,      adding more servers as needed. This ensures that the system can handle a growing number of users or transactions without compromising performance.
 - Redundancy
-- Flexibility
+  - Load balancing introduces redundancy by distributing traffic across multiple servers. In the case of server failures, the load balancer redirects traffic to other available servers, preventing a single point     of failure. This redundancy enhances the overall reliability and resilience of the system.
+- Availability
+  - Load balancing ensures high availability by distributing incoming traffic across multiple servers. In the event of a server failure or maintenance, the load balancer redirects traffic to healthy servers,         preventing downtime and ensuring continuous service availability.
 - Efficiency
+  - Load balancing enhances the reliability of a distributed system by preventing individual servers from being overloaded. It optimally allocates resources, mitigating the risk of bottlenecks and maintaining        consistent performance across the entire infrastructure. 
 
 ## Redundant load balancers
 
