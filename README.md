@@ -814,7 +814,7 @@ Now, let's discuss commonly used routing algorithms:
 - **Least Bandwidth**: This method measures traffic in megabits per second (Mbps), sending client requests to the server with the least Mbps of traffic.[Least Bandwidth](https://docs.netscaler.com/en-us/citrix-adc/current-release/load-balancing/load-balancing-customizing-algorithms/leastbandwidth-method.html)
 - **Hashing**: Distributes requests based on a key we define, such as the client IP address or the request URL.[Hashing](https://blog.algomaster.io/i/145050914/algorithm-ip-hash)
 
-## Advantages of Loadblanacing
+## Advantages of Loadbalancing
 
 Load balancing also plays a key role in preventing downtime, other advantages of load balancing include the following:
 
