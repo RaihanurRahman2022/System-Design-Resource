@@ -60,7 +60,9 @@ Collect System Design Resources
     - [Layers](#layers)
     - [Types](#types)
     - [Routing Algorithms](#routing-algorithms)
-    - [Advantages of Loadbalancing](#advantages-of-loadbalancing)   
+    - [Advantages of Loadbalancing](#advantages-of-loadbalancing)
+    - [Redundant load balancers](#redundant-load-balancers)
+      - [Methods to Eliminate SPOF](#methods-to-eliminate-spof)
 
 
 # What is system design?
@@ -830,10 +832,61 @@ Load balancing also plays a key role in preventing downtime, other advantages of
 ## Redundant load balancers
 
 As you must've already guessed, the load balancer itself can be a single point of failure. To overcome this, a second or `N` number of load balancers can be used in a cluster mode.
-
-And, if there's a failure detection and the _active_ load balancer fails, another _passive_ load balancer can take over which will make our system more fault-tolerant.
+A load balancer can become a **Single Point of Failure (SPOF)** if it fails, disrupting traffic to backend servers. Below are methods to achieve redundancy and eliminate SPOF, including consistent hashing as a complementary technique. And, if there's a failure detection and the _active_ load balancer fails, another _passive_ load balancer can take over which will make our system more fault-tolerant.
 
 ![redundant-load-balancing](https://raw.githubusercontent.com/karanpratapsingh/portfolio/master/public/static/courses/system-design/chapter-I/load-balancing/redundant-load-balancer.png)
+
+
+## Methods to Eliminate SPOF
+
+1. **Active-Passive Redundancy (Failover)**  
+   - **Description**: One active load balancer handles traffic; a passive standby takes over using a shared virtual IP (VIP) if it fails.  
+   - **Example**: NGINX with Keepalived; if LB1 (`192.168.1.1`) fails, LB2 assumes the VIP.  
+   - **Tools**: Keepalived, Heartbeat, HAProxy.  
+   - **Pros**: Simple, cost-effective.  
+   - **Cons**: Passive node underutilized, potential failover delay.
+
+2. **Active-Active Redundancy**  
+   - **Description**: Multiple load balancers handle traffic simultaneously, redistributing load if one fails.  
+   - **Example**: Two NGINX load balancers with round-robin DNS for `app.example.com`.  
+   - **Tools**: NGINX, HAProxy, AWS ALB.  
+   - **Pros**: Maximizes resources, fast recovery.  
+   - **Cons**: Complex, requires synchronized configs.
+
+3. **Clustered Load Balancers**  
+   - **Description**: A group of load balancers acts as a single unit, sharing traffic and state.  
+   - **Example**: AWS ALB across multiple Availability Zones, rerouting traffic if one AZ fails.  
+   - **Tools**: F5 BIG-IP, Citrix ADC, Kubernetes MetalLB.  
+   - **Pros**: Scalable, managed solutions simplify setup.  
+   - **Cons**: Expensive, complex for on-premises.
+
+4. **DNS-Based Load Balancing**  
+   - **Description**: DNS distributes traffic to multiple load balancers, removing failed ones via health checks.  
+   - **Example**: Cloudflare resolves `app.example.com` to healthy load balancer IPs.  
+   - **Tools**: Route 53, Cloudflare, Google Cloud DNS.  
+   - **Pros**: Ideal for global setups.  
+   - **Cons**: DNS caching may delay failover.
+
+5. **Anycast Routing**  
+   - **Description**: Multiple load balancers share one IP; BGP routes traffic to the nearest/healthy node.  
+   - **Example**: AWS Global Accelerator routes traffic to load balancers in different regions.  
+   - **Tools**: Cloudflare, Akamai, AWS Global Accelerator.  
+   - **Pros**: Seamless failover, geographic optimization.  
+   - **Cons**: Complex, suited for large-scale setups.
+
+6. **Consistent Hashing (Complementary)**  
+   - **Description**: Maps requests to load balancers or servers using a hash ring, minimizing remapping during failures or scaling.  
+   - **Example**: NGINX with `hash $remote_addr consistent` routes client IPs to servers; AWS Global Accelerator hashes IPs to load balancers.  
+   - **Tools**: NGINX, HAProxy, cloud load balancers, Ketama.  
+   - **Pros**: Minimizes disruption, supports session persistence, scalable.  
+   - **Cons**: Not a standalone solution, requires health checks and other redundancy methods.
+
+## Key Considerations
+- **Health Checks**: Essential for detecting failed load balancers or servers (e.g., via Keepalived, Cloudflare).  
+- **Session Persistence**: Use consistent hashing or shared storage (e.g., Redis) for sticky sessions.  
+- **Monitoring**: Use Prometheus, Nagios, or cloud-native tools to track health and alert on failures.  
+- **Cloud vs. On-Premises**: Cloud providers (AWS, Azure, GCP) simplify redundancy; on-premises requires tools like NGINX or HAProxy.
+
 
 ## Features
 
