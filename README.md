@@ -934,7 +934,7 @@ Load balancers are used to distribute incoming requests and traffics, evenly acr
 - Maximize performance and minimize response time. (Latency)
 
 ## Resource for details 
-[System Design Of Loadbalancer](https://medium.com/@lazygeek78/system-design-of-loadbalancer-9b67283703f3)
-[The dangers of not having a high availability setup for your load balancer — as well as your applications!](https://www.loadbalancer.org/blog/the-dangers-of-not-having-an-ha-setup-for-your-load-balancer-as-well-as-your-appliances/)
-[Load balancing your load balancers for a crazy amount of SSL TPS](https://www.loadbalancer.org/blog/load-balancing-your-load-balancers-for-endless-scalability/)
-[Active/active for N+1 redundancy and > 1Tbps of ADC throughput](https://www.loadbalancer.org/blog/active-active-for-scalable-redundancy-from-loadbalancer/)
+- [System Design Of Loadbalancer](https://medium.com/@lazygeek78/system-design-of-loadbalancer-9b67283703f3)
+- [The dangers of not having a high availability setup for your load balancer — as well as your applications!](https://www.loadbalancer.org/blog/the-dangers-of-not-having-an-ha-setup-for-your-load-balancer-as-well-as-your-appliances/)
+- [Load balancing your load balancers for a crazy amount of SSL TPS](https://www.loadbalancer.org/blog/load-balancing-your-load-balancers-for-endless-scalability/)
+- [Active/active for N+1 redundancy and > 1Tbps of ADC throughput](https://www.loadbalancer.org/blog/active-active-for-scalable-redundancy-from-loadbalancer/)
