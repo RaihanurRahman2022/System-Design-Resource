@@ -736,11 +736,22 @@ A load balancer can sit in front of the servers and route client requests across
 
 ## Workload distribution
 
+By evenly spreading the workload, load balancing aims to prevent overload on a single server, enhance performance by reducing response times and improve availability by rerouting traffic in case of server failures. 
 This is the core functionality provided by a load balancer and has several common variations:
 
-- **Host-based**: Distributes requests based on the requested hostname.
-- **Path-based**: Using the entire URL to distribute requests as opposed to just the hostname.
-- **Content-based**: Inspects the message content of a request. This allows distribution based on content such as the value of a parameter.
+  - **Host-based**: Distributes requests based on the requested hostname (e.g., `example.com` or `api.example.com`). Routes traffic to specific servers or services based on the domain or subdomain in the HTTP request header.
+  
+  - **Path-based**: Uses the entire URL, particularly the path (e.g., `/api/users` or `/images`), to distribute requests. Routes traffic to specific servers based on URL path patterns, offering more granular control than host-based routing.
+  
+  - **Content-based**: Inspects the message content of a request, such as query parameters, headers, or payload (e.g., JSON or XML data), to make distribution decisions. For example, routes requests with `?region=US` to servers optimized for US-based users.
+
+### Additional Notes:
+- These methods are typically implemented at different layers of the OSI model:
+  - **Host-based** and **Path-based** are commonly associated with Layer 7 (application layer) load balancing, as they rely on HTTP-specific information like hostnames and URLs.
+  - **Content-based** is also a Layer 7 technique, as it requires parsing the content of the request, which may involve inspecting headers, query parameters, or the request body.
+- These methods can be combined depending on the load balancer's configuration and the application's needs. For example, a load balancer might use host-based routing to select a service and then path-based or content-based routing to further distribute requests within that service.
+- Common load balancers that support these methods include NGINX, HAProxy, AWS Elastic Load Balancer (ALB), and cloud-based solutions like Google Cloud Load Balancing or Azure Application Gateway.
+- 
 ## Layers
 
 Generally speaking, load balancers operate at one of the two levels:
