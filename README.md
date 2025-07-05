@@ -824,7 +824,7 @@ Load balancing also plays a key role in preventing downtime, other advantages of
   - Load balancing introduces redundancy by distributing traffic across multiple servers. In the case of server failures, the load balancer redirects traffic to other available servers, preventing a single point     of failure. This redundancy enhances the overall reliability and resilience of the system.
 - Availability
   - Load balancing ensures high availability by distributing incoming traffic across multiple servers. In the event of a server failure or maintenance, the load balancer redirects traffic to healthy servers,         preventing downtime and ensuring continuous service availability.
-- Efficiency
+- Reliability
   - Load balancing enhances the reliability of a distributed system by preventing individual servers from being overloaded. It optimally allocates resources, mitigating the risk of bottlenecks and maintaining        consistent performance across the entire infrastructure. 
 
 ## Redundant load balancers
