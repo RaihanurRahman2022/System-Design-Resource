@@ -64,7 +64,7 @@ Collect System Design Resources
     - [Redundant load balancers](#redundant-load-balancers)
       - [Methods to Eliminate SPOF](#methods-to-eliminate-spof)
     - [Features](#features) 
-
+    - [Design a Distributed Load Balancing](#design-a-distributed-load-balancing)
 
 # What is system design?
 System design is the process of defining the elements of a system, as well as their interactions and relationships, in order to satisfy a set of specified requirements.
@@ -916,3 +916,22 @@ Following are some of the load balancing solutions commonly used in the industry
 - [DigitalOcean Load Balancer](https://www.digitalocean.com/products/load-balancer)
 - [Nginx](https://www.nginx.com)
 - [HAProxy](http://www.haproxy.org)
+
+## Design a Distributed Load Balancing
+Load balancers are used to distribute incoming requests and traffics, evenly across multiple servers during peak traffic times, and to increase reliability of applications.
+
+## Functional Requirement
+- The load balancer evaluate the incoming request and determines which server or resources should handle the request.
+- Track server capacity, server response time, number of active connections, and geographic location to ensure smooth transitions.
+- Distribute requests across multiple computing resource.
+- Ensure consistency in server responses.
+
+## Non-Functional Requirement
+- Horizontally Scale.
+- Optimize resource use.
+- High availability. No single point of failure.
+- Reliability. (eventual consistency)
+- Maximize performance and minimize response time. (Latency)
+
+## Resource for details 
+[System Design Of Loadbalancer](https://medium.com/@lazygeek78/system-design-of-loadbalancer-9b67283703f3)
