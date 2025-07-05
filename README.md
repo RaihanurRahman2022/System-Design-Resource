@@ -63,6 +63,7 @@ Collect System Design Resources
     - [Advantages of Loadbalancing](#advantages-of-loadbalancing)
     - [Redundant load balancers](#redundant-load-balancers)
       - [Methods to Eliminate SPOF](#methods-to-eliminate-spof)
+    - [Features](#features) 
 
 
 # What is system design?
