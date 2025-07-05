@@ -808,11 +808,11 @@ Unfortunately, DNS load balancing has inherent problems limiting its reliability
 Now, let's discuss commonly used routing algorithms:
 
 - **Round-robin**: Requests are distributed to application servers in rotation. [Round Robin Algorithms](https://blog.algomaster.io/i/145050914/algorithm-round-robin)
-- **Weighted Round-robin**: Builds on the simple Round-robin technique to account for differing server characteristics such as compute and traffic handling capacity using weights that can be assigned via DNS records by the administrator.
-- **Least Connections**: A new request is sent to the server with the fewest current connections to clients. The relative computing capacity of each server is factored into determining which one has the least connections.
-- **Least Response Time**: Sends requests to the server selected by a formula that combines the fastest response time and fewest active connections.
-- **Least Bandwidth**: This method measures traffic in megabits per second (Mbps), sending client requests to the server with the least Mbps of traffic.
-- **Hashing**: Distributes requests based on a key we define, such as the client IP address or the request URL.
+- **Weighted Round-robin**: Builds on the simple Round-robin technique to account for differing server characteristics such as compute and traffic handling capacity using weights that can be assigned via DNS records by the administrator.[Weighted Round-robin](https://blog.algomaster.io/i/145050914/algorithm-weighted-round-robin)
+- **Least Connections**: A new request is sent to the server with the fewest current connections to clients. The relative computing capacity of each server is factored into determining which one has the least connections.[Least Connections](https://blog.algomaster.io/i/145050914/algorithm-least-connections)
+- **Least Response Time**: Sends requests to the server selected by a formula that combines the fastest response time and fewest active connections.[Least Response Time](https://blog.algomaster.io/i/145050914/algorithm-least-response-time)
+- **Least Bandwidth**: This method measures traffic in megabits per second (Mbps), sending client requests to the server with the least Mbps of traffic.[Least Bandwidth]
+- **Hashing**: Distributes requests based on a key we define, such as the client IP address or the request URL.[Hashing](https://blog.algomaster.io/i/145050914/algorithm-ip-hash)
 
 ## Advantages
 
